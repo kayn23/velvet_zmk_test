@@ -1,21 +1,21 @@
-if SHIELD_TBKMINI_LEFT 
+if SHIELD_VELVET_LEFT 
 
 config ZMK_KEYBOARD_NAME
-    default "tbkmini Left"
+    default "velvet Left"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_TBKMINI_RIGHT
+if SHIELD_VELVET_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "tbkmini Right"
+    default "velvet Right"
 
 endif
 
-if SHIELD_TBKMINI
+if SHIELD_VELVET
 
 config ZMK_SPLIT
     default y

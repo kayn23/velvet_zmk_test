@@ -1,0 +1,10 @@
+config SHIELD_VELVET
+    bool
+
+config SHIELD_VELVET_LEFT
+    def_bool $(shields_list_contains,velvet_left)
+        select SHIELD_VELVET
+
+config SHIELD_VELVET_RIGHT
+    def_bool $(shields_list_contains,velvet_tight)
+        select SHIELD_VELVET
