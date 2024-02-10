@@ -1,2 +1,5 @@
-board: [ "nice_nano" ]
-shield: [ "velvet_left", "velvet_right" ]
+board: ["nice_nano"]
+shield: ["velvet_left", "velvet_right"]
+include:
+  - board: nice_nano
+    shield: settings_reset
