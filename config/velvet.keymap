@@ -2,22 +2,55 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define BASE 0
+#define SYM 1
+#define NAV 2
+
 / {
+	behaviors {
+		lh_pht: left_positional_hold_tap {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "tap-unless-interrupted";
+			tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+			quick-tap-ms = <200>;
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <5 6 7 8 9>;
+		};
+		rh_pht: right_positional_hold_tap {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "tap-unless-interrupted";
+			tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+			quick-tap-ms = <200>;
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <0 1 2 3 4 5>;
+		};
+	};
 	keymap {
 		compatible = "zmk,keymap";
 
 
-		default_layer {
+		BASE {
 // ---------------------------------------------------------------------------------------------------------------------------------
-// |  ESC  |  Q  |  W  |  F   |  P   |  B   |    |  J   |  L   |  U  |  Y  |  '  |   \  |
-// |  TAB  |  A  |  R  |  S   |  T   |  G   |    |  M   |  N   |  E  |  I  |  O  |   '  |
-// | SHIFT |  Z  |  X  |  C   |  D   |  V   |    |  K   |  H   |  ,  |  .  |  /  | CTRL |
-//                     | ESC  | SPC  | TAB  |    | RET  | BSPC | DEL |
+// |  Q  |  W  |  F   |  P   |  B   |    |  J   |  L   |  U  |  Y  |  '  |
+// |  A  |  R  |  S   |  T   |  G   |    |  M   |  N   |  E  |  I  |  O  |
+// |  Z  |  X  |  C   |  D   |  V   |    |  K   |  H   |  ,  |  .  |  /  |
+//       | TAB |  `   |  ESC | Enter|    | space| BSPC |  [  |  '  |
 			bindings = <
-						&kp Q &kp W &kp E &kp R &kp T          &kp Y &kp U  &kp I     &kp O   &kp P
-	          &kp A &kp S &kp D &kp F &kp G          &kp H &kp J  &kp K     &kp L   &kp SEMI
-	          &kp Z &kp X &kp C &kp V &kp B          &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-	          &kp TAB &kp GRAVE &kp ESC &kp ENTER    &kp SPACE &kp BSPC &kp RBKT &kp SQT  
+						&kp Q          &kp W          &kp E            &kp R          &kp T          &kp Y     &kp U           &kp I            &kp O            &kp P
+	          &lh_pht LCTRL A &lh_pht LALT S &lh_pht LSHIFT D &lh_pht LGUI F &kp G          &kp H     &rh_pht LGUI J  &rh_pht LSHIFT K &rh_pht LALT L   &rh_pht LCTRL SEMI
+	          &kp Z          &kp X          &kp C            &kp V          &kp B          &kp N     &kp M           &kp COMMA        &kp DOT          &kp FSLH
+	                         &kp TAB        &kp GRAVE        &kp ESC        &kp ENTER      &kp SPACE &lt SYM BSPC        &kp LBKT         &kp SQT  
+			>;
+		};
+
+		SYM {
+			bindings = <
+						&kp EXCL  &kp AT    &kp POUND            &kp DLLR           &kp PRCNT          &kp CARET &kp AMPS           &kp STAR             &kp LPAR   &kp RPAR
+						&kp KP_N1 &kp KP_N2 &lh_pht LSHIFT KP_N3 &lh_pht LGUI KP_N4 &kp KP_N5          &kp KP_N6 &rh_pht LGUI KP_N7 &rh_pht LSHIFT KP_N8 &kp KP_N9  &kp KP_N0
+						&kp RBRC  &kp RBRC  &kp MINUS            &kp EQUAL          &kp GRAVE          &kp TILDE &kp U              &kp DQT              &kp BSLH   &kp PIPE
+						          &kp LBKT  &kp RBKT             &trans             &kp ENTER          &kp SPACE &trans             &trans               &trans
 			>;
 		};
 	};
