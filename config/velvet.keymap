@@ -59,10 +59,10 @@
 
         NAV {
             bindings = <
-&kp LG(LBKT)   &kp LG(RBKT)  &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &kp LG(LEFT)  &kp LG(RIGHT)  &kp LG(LS(LEFT))  &kp LG(LS(RIGHT))  &trans
-&mt LCTRL TAB  &kp LALT      &kp LSHIFT       &kp LGUI       &trans           &trans        &kp LEFT       &kp DOWN          &kp UP             &kp RIGHT
-&kp LS(TAB)    &kp TAB       &kp LC(LEFT)     &kp LC(RIGHT)  &kp LA(LG(I))    &trans        &kp LA(LEFT)   &kp LA(RIGHT)     &kp LA(LS(LEFT))   &kp LA(LS(RIGHT))
-               &trans        &trans           &trans         &trans           &trans        &trans         &trans            &trans
+&kp LG(LBKT)   &kp LG(RBKT)  &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &kp LG(LEFT)  &kp LG(RIGHT)  &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+&mt LCTRL TAB  &kp LALT      &kp LSHIFT       &kp LGUI       &trans           &trans        &kp LEFT       &kp DOWN       &kp UP             &kp RIGHT
+&kp LS(TAB)    &kp TAB       &kp LC(LEFT)     &kp LC(RIGHT)  &kp LA(LG(I))    &trans        &kp LA(LEFT)   &kp LA(RIGHT)  &kp LA(LS(LEFT))   &kp LA(LS(RIGHT))
+               &trans        &trans           &trans         &trans           &trans        &trans         &trans         &trans
             >;
         };
     };
