@@ -10,7 +10,7 @@
         lh_pht: left_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
+            flavor = "tap-preferred";
             tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
@@ -21,7 +21,7 @@
         rh_pht: right_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
+            flavor = "tap-preferred";
             tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
@@ -41,10 +41,10 @@
             //       | TAB |  `   |  ESC | Enter|    | space| BSPC |  [  |  '  |
 
             bindings = <
-&kp Q            &kp W           &kp E             &kp R           &kp T        &kp Y      &kp U           &kp I             &kp O           &kp P
-&lh_pht LCTRL A  &lh_pht LALT S  &lh_pht LSHIFT D  &lh_pht LGUI F  &kp G        &kp H      &rh_pht LGUI J  &rh_pht LSHIFT K  &rh_pht LALT L  &rh_pht LCTRL SEMI
-&kp Z            &kp X           &kp C             &kp V           &kp B        &kp N      &kp M           &kp COMMA         &kp DOT         &kp FSLH
-                 &kp TAB         &kp GRAVE         &kp ESC         &kp ENTER    &kp SPACE  &lt SYM BSPC    &kp LBKT          &kp SQT
+&kp Q        &kp W       &kp E         &kp R       &kp T        &kp Y      &kp U         &kp I         &kp O       &kp P
+&mt LCTRL A  &mt LALT S  &mt LSHIFT D  &mt LGUI F  &kp G        &kp H      &mt LGUI J    &mt LSHIFT K  &mt LALT L  &mt LCTRL SEMI
+&kp Z        &kp X       &kp C         &kp V       &kp B        &kp N      &kp M         &kp COMMA     &kp DOT     &kp FSLH
+             &kp TAB     &kp GRAVE     &kp ESC     &kp ENTER    &kp SPACE  &lt SYM BSPC  &kp LBKT      &kp SQT
             >;
         };
 
