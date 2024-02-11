@@ -15,7 +15,7 @@
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <5 6 7 8 9 29 19 18 28 27 17 16 26 25 15 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 34 35 36 37>;
+            hold-trigger-key-positions = <5 6 7 8 9>;
         };
 
         rh_pht: right_positional_hold_tap {
@@ -26,7 +26,7 @@
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <0 1 2 3 4 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
+            hold-trigger-key-positions = <0 1 2 3 4>;
         };
     };
 
@@ -41,10 +41,10 @@
             //       | TAB |  `   |  ESC | Enter|    | space| BSPC |  [  |  '  |
 
             bindings = <
-&kp Q        &kp W       &kp E         &kp R       &kp T        &kp Y      &kp U         &kp I         &kp O       &kp P
-&mt LCTRL A  &mt LALT S  &mt LSHIFT D  &mt LGUI F  &kp G        &kp H      &mt LGUI J    &mt LSHIFT K  &mt LALT L  &mt LCTRL SEMI
-&kp Z        &kp X       &kp C         &kp V       &kp B        &kp N      &kp M         &kp COMMA     &kp DOT     &kp FSLH
-             &kp TAB     &kp GRAVE     &kp ESC     &kp ENTER    &kp SPACE  &lt SYM BSPC  &kp LBKT      &kp SQT
+&kp Q            &kp W           &kp E             &kp R           &kp T        &kp Y      &kp U             &kp I             &kp O           &kp P
+&lh_pht LCTRL A  &lh_pht LALT S  &lh_pht LSHIFT D  &lh_pht LGUI F  &kp G        &kp H      &rh_pht LGUI J    &rh_pht LSHIFT K  &rh_pht LALT L  &rh_pht LCTRL SEMI
+&kp Z            &kp X           &kp C             &kp V           &kp B        &kp N      &kp M             &kp COMMA         &kp DOT         &kp FSLH
+                 &kp TAB         &kp GRAVE         &kp ESC         &kp ENTER    &kp SPACE  &lt SYM BSPC      &kp LBKT          &kp SQT
             >;
         };
 
@@ -52,17 +52,17 @@
             bindings = <
 &kp EXCL   &kp AT     &kp POUND             &kp DLLR            &kp PRCNT    &kp CARET  &kp AMPS            &kp STAR              &kp LPAR   &kp RPAR
 &kp KP_N1  &kp KP_N2  &lh_pht LSHIFT KP_N3  &lh_pht LGUI KP_N4  &kp KP_N5    &kp KP_N6  &rh_pht LGUI KP_N7  &rh_pht LSHIFT KP_N8  &kp KP_N9  &kp KP_N0
-&kp RBRC   &kp RBRC   &kp MINUS             &kp EQUAL           &kp GRAVE    &kp TILDE  &kp U               &kp DQT               &kp BSLH   &kp PIPE
-           &kp LBKT   &kp RBKT              &trans              &kp ENTER    &kp SPACE  &trans              &trans                &trans
+&kp LBRC   &kp RBRC   &kp MINUS             &kp EQUAL           &kp GRAVE    &kp TILDE  &kp U               &kp DQT               &kp BSLH   &kp PIPE
+           &kp LBKT   &kp RBKT              &trans              &trans       &trans     &trans              &trans                &trans
             >;
         };
 
         NAV {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT
-&trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans  &trans
-        &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans
+&kp LG(LBKT)  &kp LG(RBKT)  &kp LC(LS(TAB)) &kp LC(TAB)   &trans            &kp LG(LEFT)  &kp LG(RIGHT)   &kp LG(LS(LEFT)) &kp LG(LS(RIGHT)) &trans
+&mp LCTRL TAB &kp LALT      &kp LSHIFT      &kp LGUI      &trans            &trans        &kp LEFT        &kp DOWN         &kp UP            &kp RIGHT
+&trans        &trans        &kp LC(LEFT)    &kp LC(RIGHT) &kp LA(LG(I))     &trans        &kp LA(LEFT)    &kp LA(RIGHT)    &kp LA(LS(LEFT))  &kp LA(LS(RIGHT))
+              &trans        &trans          &trans        &trans            &trans        &trans          &trans           &trans
             >;
         };
     };
