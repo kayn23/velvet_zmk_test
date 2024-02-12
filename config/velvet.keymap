@@ -49,10 +49,10 @@
             //       | TAB |  `   |  ESC | Enter|    | space| BSPC |  [  |  '  |
 
             bindings = <
-&kp Q           &kp W              &kp E            &kp R          &kp T             &kp Y      &kp U         &kp I            &kp O              &kp P
-&l_pht LCTRL A  &l_pht LEFT_ALT S  &l_pht LSHIFT D  &l_pht LGUI F  &kp G             &kp H      &r_pht LGUI J &r_pht LSHIFT K  &r_pht LEFT_ALT L  &r_pht LCTRL SEMI
-&kp Z           &kp X              &kp C            &kp V          &kp B             &kp N      &kp M         &kp COMMA        &kp DOT            &kp FSLH
-                &kp TAB            &kp RBKT         &lt 2 ESC      &mt LGUI ENTER    &kp SPACE  &lt SYM BSPC  &kp LBKT         &kp SQT
+&kp Q           &kp W              &kp E            &kp R          &kp T             &kp Y      &kp U          &kp I            &kp O              &kp P
+&l_pht LCTRL A  &l_pht LEFT_ALT S  &l_pht LSHIFT D  &l_pht LGUI F  &kp G             &kp H      &r_pht LGUI J  &r_pht LSHIFT K  &r_pht LEFT_ALT L  &r_pht LCTRL SEMI
+&kp Z           &kp X              &kp C            &kp V          &kp B             &kp N      &kp M          &kp COMMA        &kp DOT            &kp FSLH
+                &kp TAB            &kp RBKT         &lt 2 ESC      &mt LGUI ENTER    &kp SPACE  &lt SYM BSPC   &kp LBKT         &kp SQT
             >;
         };
 
@@ -60,17 +60,17 @@
             bindings = <
 &kp EXCL   &kp AT     &kp POUND         &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp STAR          &kp LPAR   &kp RPAR
 &kp KP_N1  &kp KP_N2  &mt LSHIFT KP_N3  &mt LGUI KP_N4  &kp KP_N5    &kp KP_N6  &mt LGUI KP_N7  &mt LSHIFT KP_N8  &kp KP_N9  &kp KP_N0
-&kp LBRC   &kp RBRC   &kp MINUS         &kp EQUAL       &kp GRAVE    &kp TILDE  &none           &kp DQT           &kp BSLH   &kp PIPE
+&kp LBRC   &kp RBRC   &kp MINUS         &kp EQUAL       &kp GRAVE    &kp TILDE  &kp GT          &kp DQT           &kp BSLH   &kp PIPE
            &kp LBKT   &kp RBKT          &trans          &trans       &trans     &trans          &trans            &trans
             >;
         };
 
         NAV {
             bindings = <
-&kp LG(LBKT)     &kp LG(RBKT)  &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &kp LG(LEFT)   &kp C_PP      &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
-&mt LCTRL TAB    &kp LALT      &kp LSHIFT       &kp LGUI       &trans           &kp LG(RIGHT)  &kp LEFT      &kp DOWN       &kp UP             &kp RIGHT
-&none            &none   &kp LC(LEFT)     &kp LC(RIGHT)  &kp LA(LG(I))    &trans         &kp LA(LEFT)  &kp LA(RIGHT)  &kp LA(LS(LEFT))   &kp LA(LS(RIGHT))
-                 &trans        &trans           &trans         &trans           &trans         &trans        &trans         &trans
+&kp LG(LBKT)   &kp LG(RBKT)  &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &kp LG(LEFT)   &kp C_PP      &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
+&mt LCTRL TAB  &kp LALT      &kp LSHIFT       &kp LGUI       &trans           &kp LG(RIGHT)  &kp LEFT      &kp DOWN       &kp UP             &kp RIGHT
+&none          &none         &kp LC(LEFT)     &kp LC(RIGHT)  &kp LA(LG(I))    &trans         &kp LA(LEFT)  &kp LA(RIGHT)  &kp LA(LS(LEFT))   &kp LA(LS(RIGHT))
+               &trans        &trans           &trans         &trans           &trans         &trans        &trans         &trans
             >;
         };
     };
