@@ -36,24 +36,6 @@
 
             hold-trigger-key-positions = <0 1 2 3 4 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
         };
-
-        swapper: swapper {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SWAPPER";
-            bindings = <&kp X>, <&kp TAB>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        revert_swapper: revert_swapper {
-            compatible = "zmk,behavior-mod-morph";
-            label = "REVERT_SWAPPER";
-            bindings = <&kp Z>, <&kp LS(TAB)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
     };
 
     keymap {
@@ -67,10 +49,10 @@
             //       | TAB |  `   |  ESC | Enter|    | space| BSPC |  [  |  '  |
 
             bindings = <
-&kp Q            &kp W              &kp E            &kp R          &kp T             &kp Y      &kp U          &kp I            &kp O              &kp P
-&l_pht LCTRL A   &l_pht LEFT_ALT S  &l_pht LSHIFT D  &l_pht LGUI F  &kp G             &kp H      &r_pht LGUI J  &r_pht LSHIFT K  &r_pht LEFT_ALT L  &r_pht LCTRL SEMI
-&revert_swapper  &swapper           &kp C            &kp V          &kp B             &kp N      &kp M          &kp COMMA        &kp DOT            &kp FSLH
-                 &kp TAB            &kp RBKT         &lt 2 ESC      &mt LGUI ENTER    &kp SPACE  &lt SYM BSPC   &kp LBKT         &kp SQT
+&kp Q           &kp W              &kp E            &kp R          &kp T             &kp Y      &kp U          &kp I            &kp O              &kp P
+&l_pht LCTRL A  &l_pht LEFT_ALT S  &l_pht LSHIFT D  &l_pht LGUI F  &kp G             &kp H      &r_pht LGUI J  &r_pht LSHIFT K  &r_pht LEFT_ALT L  &r_pht LCTRL SEMI
+&kp Z           &kp X              &kp C            &kp V          &kp B             &kp N      &kp M          &kp COMMA        &kp DOT            &kp FSLH
+                &kp TAB            &kp RBKT         &lt 2 ESC      &mt LGUI ENTER    &kp SPACE  &lt SYM BSPC   &kp LBKT         &kp SQT
             >;
         };
 
