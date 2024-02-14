@@ -38,14 +38,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-
-        combo_caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <12 33 17>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
