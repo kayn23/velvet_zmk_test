@@ -2,9 +2,9 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
-#define SYM 1
-#define NAV 2
-#define DVORAK 3
+#define SYM 2
+#define NAV 3
+#define DVORAK 1
 
 &mt {
     tapping-term-ms = <300>;
