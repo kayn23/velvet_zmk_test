@@ -1,9 +1,11 @@
-#include <behaviors.dtsi>
+
 #include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
 
 #define BASE 0
 #define SYM 1
 #define NAV 2
+#define DVORAK 3
 
 &mt {
     tapping-term-ms = <300>;
@@ -14,6 +16,7 @@
 &lt { tapping-term-ms = <125>; };
 
 / {
+
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -47,18 +50,10 @@
         };
     };
 
-    combos { compatible = "zmk,combos"; };
-
     keymap {
         compatible = "zmk,keymap";
 
         BASE {
-            // ---------------------------------------------------------------------------------------------------------------------------------
-            // |  Q  |  W  |  F   |  P   |  B   |    |  J   |  L   |  U  |  Y  |  '  |
-            // |  A  |  R  |  S   |  T   |  G   |    |  M   |  N   |  E  |  I  |  O  |
-            // |  Z  |  X  |  C   |  D   |  V   |    |  K   |  H   |  ,  |  .  |  /  |
-            //       | TAB |  `   |  ESC | Enter|    | space| BSPC |  [  |  '  |
-
             bindings = <
 &kp Q        &kp W           &kp E         &kp R       &kp T             &kp Y      &kp U       &kp I         &kp O           &kp P
 &hm LCTRL A  &hm LEFT_ALT S  &hm LSHIFT D  &hm LGUI F  &kp G             &kp H      &hm LGUI J  &hm RSHIFT K  &hm LEFT_ALT L  &hm LCTRL SEMI
@@ -81,8 +76,16 @@
 &kp LG(LBKT)          &kp LG(RBKT)   &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &kp TAB        &kp C_PP      &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
 &kp LCTRL             &kp LALT       &kp LSHIFT       &kp LGUI       &trans           &kp LG(LEFT)   &kp LEFT      &kp DOWN       &kp UP             &kp RIGHT
 &kp LG(LS(NUMBER_6))  &kp LG(RS(Q))  &kp LC(LEFT)     &kp LC(RIGHT)  &kp LA(LG(I))    &kp LG(RIGHT)  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LA(LS(LEFT))   &kp LA(LS(RIGHT))
-                      &trans         &trans           &trans         &trans           &trans         &trans        &trans         &none
+                      &trans         &trans           &trans         &trans           &trans         &tog DVORAK   &trans         &none
             >;
         };
-    };
+
+//        DVORAK {
+//            bindings = <
+//&kp SQT  &kp COMMA &kp DOT  &kp P       &kp Y               &kp F     &kp G         &kp C      &kp R    &kp L
+//&hm A    &hm O     &hm E    &hm U       &kp I               &kp D     &lm H         &lm T      &lm N    &lm S
+//&kp SEMI &kp Q     &kp J    &kp K       &kp X               &kp B     &kp M         &kp W      &kp V    &kp Z
+//         &kp TAB   &kp RBKT &lt NAV ESC &mt LGUI ENTER      &kp SPACE &lt BASE BSPC &kp MINUS   &kp FSLH
+//            >;
+//          };
 };
