@@ -91,7 +91,7 @@
 &kp SQT      &kp COMMA       &kp DOT       &kp P        &kp Y             &kp F      &kp G          &kp C         &kp R           &kp L
 &hm LCTRL A  &hm LEFT_ALT O  &hm LSHIFT E  &hm LGUI U   &kp I             &kp D      &hm LGUI H     &hm RSHIFT T  &hm LEFT_ALT N  &hm LCTRL S
 &kp SEMI     &kp Q           &kp J         &kp K        &kp X             &kp B      &kp M          &kp W         &kp V           &kp Z
-             &kp TAB         &kp RBKT      &lt NAV ESC  &mt LGUI ENTER    &kp SPACE  &lt BASE BSPC  &kp FSLH      &kp MINUS
+             &kp TAB         &kp RBKT      &lt NAV ESC  &mt LGUI ENTER    &kp SPACE  &lt SYM BSPC  &kp FSLH      &kp MINUS
             >;
         };
     };
