@@ -50,6 +50,21 @@
 
     combos { compatible = "zmk,combos"; };
 
+    macros {
+        toggle_dvo: toggle_dvo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&none>,
+                <&macro_press>,
+                <&kp LC(SPACE)>,
+                <&macro_tap>,
+                <&tog 1>;
+
+            label = "TOGGLE_DVO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -61,22 +76,21 @@
             //       | TAB |  `   |  ESC | Enter|    | space| BSPC |  [  |  '  |
 
             bindings = <
-&kp Q        &kp W           &kp E         &kp R       &kp T             &kp Y      &kp U       &kp I         &kp O           &kp P
-&hm LCTRL A  &hm LEFT_ALT S  &hm LSHIFT D  &hm LGUI F  &kp G             &kp H      &hm LGUI J  &hm RSHIFT K  &hm LEFT_ALT L  &hm LCTRL SEMI
-&kp Z        &kp X           &kp C         &kp V       &kp B             &kp N      &kp M       &kp COMMA     &kp DOT         &kp FSLH
-             &kp TAB         &kp RBKT      &lt NAV ESC   &mt LGUI ENTER    &kp SPACE  &lt SYM BSPC  &kp LBKT      &kp SQT
+&kp Q        &kp W           &kp E         &kp R        &kp T             &kp Y      &kp U         &kp I         &kp O           &kp P
+&hm LCTRL A  &hm LEFT_ALT S  &hm LSHIFT D  &hm LGUI F   &kp G             &kp H      &hm LGUI J    &hm RSHIFT K  &hm LEFT_ALT L  &hm LCTRL SEMI
+&kp Z        &kp X           &kp C         &kp V        &kp B             &kp N      &kp M         &kp COMMA     &kp DOT         &kp FSLH
+             &kp TAB         &kp RBKT      &lt NAV ESC  &mt LGUI ENTER    &kp SPACE  &lt SYM BSPC  &kp LBKT      &kp SQT
             >;
         };
 
         DVORAK {
             bindings = <
-&kp SQT      &kp COMMA       &kp DOT       &kp P        &kp Y             &kp F      &kp G          &kp C         &kp R           &kp L
-&hm LCTRL A  &hm LEFT_ALT O  &hm LSHIFT E  &hm LGUI U   &kp I             &kp D      &hm LGUI H     &hm RSHIFT T  &hm LEFT_ALT N  &hm LCTRL S
-&kp SEMI     &kp Q           &kp J         &kp K        &kp X             &kp B      &kp M          &kp W         &kp V           &kp Z
+&kp SQT      &kp COMMA       &kp DOT       &kp P        &kp Y             &kp F      &kp G         &kp C         &kp R           &kp L
+&hm LCTRL A  &hm LEFT_ALT O  &hm LSHIFT E  &hm LGUI U   &kp I             &kp D      &hm LGUI H    &hm RSHIFT T  &hm LEFT_ALT N  &hm LCTRL S
+&kp SEMI     &kp Q           &kp J         &kp K        &kp X             &kp B      &kp M         &kp W         &kp V           &kp Z
              &kp TAB         &kp RBKT      &lt NAV ESC  &mt LGUI ENTER    &kp SPACE  &lt SYM BSPC  &kp FSLH      &kp MINUS
             >;
         };
- 
 
         SYM {
             bindings = <
@@ -92,8 +106,8 @@
 &kp LG(LBKT)          &kp LG(RBKT)   &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &kp TAB        &kp C_PP      &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP
 &kp LCTRL             &kp LALT       &kp LSHIFT       &kp LGUI       &trans           &kp LG(LEFT)   &kp LEFT      &kp DOWN       &kp UP             &kp RIGHT
 &kp LG(LS(NUMBER_6))  &kp LG(RS(Q))  &kp LC(LEFT)     &kp LC(RIGHT)  &kp LA(LG(I))    &kp LG(RIGHT)  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LA(LS(LEFT))   &kp LA(LS(RIGHT))
-                      &trans         &trans           &trans         &trans           &trans         &tog DVORAK        &trans         &none
+                      &trans         &trans           &trans         &trans           &trans         &tog DVORAK   &trans         &none
             >;
         };
-   };
+    };
 };
