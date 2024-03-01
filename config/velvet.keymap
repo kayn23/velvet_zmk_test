@@ -54,7 +54,7 @@
         toggle_dvo: toggle_dvo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LC(SPACE)>, <&macro_tap>, <&tog 1>;
+            bindings = <&macro_tap>, <&kp LC(SPACE) &tog 1>;
 
             label = "TOGGLE_DVO";
         };
